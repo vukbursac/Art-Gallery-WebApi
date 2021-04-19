@@ -1,0 +1,176 @@
+﻿@section Scripts {
+    @Scripts.Render("~/Scripts/Skripta.js")
+}
+
+<div class="row" style="margin:auto; width:400px">
+    <br />
+    <br />
+    <div class="row" style="margin:auto" id="btns">
+       
+        <button id="prijavaBtn" class="btn btn-default" style="background-color:lightblue; margin-left:150px">Login</button>
+        <br />
+        <br />
+        <button id="regFormLoad" class="btn btn-default" style="margin-left:145px">Sign up</button>
+        @*<span id="spanBtns"><span>*@
+        <br />
+    </div>
+    <div style="margin:auto; width:500px" id="regForm">
+        <form method="post" action="post/" id="registration">
+            <h3 style="margin-left:150px">Registration</h3>
+            <div class="form-group">
+                <label style="width:100px">Email:</label>
+                <input class="form-control" type="text" style="float:right" id="regEmail" />
+            </div>
+            <br />
+            <div class="form-group">
+                <label>Password:</label>
+                <input class="form-control" type="password" style="float:right" id="regPass" />
+            </div>
+            <br />
+
+            <div class="form-group">
+                <label>Repeat password:</label>
+                <input class="form-control" type="password" style="float:right" id="regPass2" />
+            </div>
+            <br />
+
+            <div class="form-group">
+                <button type="submit" style="margin-left:150px; background-color:lightblue" class="btn btn-default">Sign up</button>
+                <p id="info"></p>
+            </div>
+        </form>
+        <button id="jumpToLogin" type="submit" style="margin-left:150px" class="btn btn-default">Cancel</button>
+
+    </div>
+
+    <div id="loginDiv">
+
+        <h3 style="text-align:center">Login</h3>
+        <br />
+        <div class="form-group">
+            <label>Email:</label>
+            <input style="float:right" class="form-control" type="text" id="loginEmail" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Password:</label>
+            <input style="float:right" class="form-control" type="password" id="loginPass" />
+        </div>
+        <br />
+        <div style="text-align:center" class="form-group">
+            <button type="submit" id="loginBtn" class="btn btn-default" style="background-color:lightblue">Login</button>
+            <br />
+            <br />
+            <button id="regBtn" class="btn btn-default" @*style="margin-left:60px"*@>Cancel</button>
+        </div>
+    </div>
+
+</div>
+
+<br />
+<div class="row" style="margin-left:400px; width: 500px;">
+    <div>
+        <p id="loggedInParagraph" style="margin-left:70px"></p>
+    </div>
+
+    <div id="logoutDiv">
+        @*<h3>Odjava</h3>*@
+        <button class="btn btn-default" style="margin-left:120px; background-color:lightblue" id="logoutBtn">Log out</button>
+
+    </div>
+
+
+</div>
+<br />
+<br />
+<div style="margin:auto; width:400px">
+    <div class="row hidden text-center" id="search" style="margin:auto; width:300px">
+        <h4>Search by price:</h4>
+
+        <br />
+        <br />
+
+        <div style="width:100px; float:right">
+            <button id="findBtn" type="submit" class="btn btn-default" style="float:right; margin:auto; width:80px; background-color:lightblue">Search</button>
+        </div>
+
+        <label class="col-form-label col-sm-3" style="width: 100px" for="min">Min: </label>
+        <input class="form-control col-sm-3" type="text" id="findInput1" style="width:100px" />
+        <br />
+        <br />
+
+        <label class="col-form-label col-sm-3" style="width: 100px" for="max">Max: </label>
+        <input class="form-control col-sm-3" type="text" id="findInput2" style="width:100px" />
+        <br />
+        <br />
+        <br />
+
+    </div>
+
+
+
+</div>
+
+
+<div id="data" class="row text-center" style="margin:auto; width:700px">
+</div>
+<br />
+
+<div class="row text-center" style="margin:auto">
+    <hr />
+    <form id="create" class="hidden" style="margin: auto; width:600px">
+        <h3>Add new picture</h3>
+
+        <div class="form-group">
+            <label class="col-form-label" for="galery" style="float:left">Gallery: </label>
+            <select class="form-control col-sm-4" id="createInput4select" style="float:right"></select>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="form-group">
+            <label class="col-form-label" for="name" style="float:left">Name: </label>
+            <input class="form-control col-sm-6" type="text" id="createInput1" style="float:right" />
+            <br />
+            <br />
+            <p id="validationMsgInput1" style="color:red; float:right"></p>
+            <br />
+        </div>
+        <div class="form-group">
+            <label class="col-form-label" for="author" style="float:left">Author: </label>
+            <input class="form-control col-sm-4" type="text" id="createInput2" style="float:right" />
+            <br />
+            <br />
+            <p id="validationMsgInput2" style="color:red; float:right"></p>
+            <br />
+        </div>
+        <div class="form-group">
+            <label class="col-form-label" style="float:left" for="year">Year of manufacture: </label>
+            <input class="form-control col-sm-4" type="number" id="createInput3" style="float: right; width:200px" />
+            <br />
+            <br />
+            <p id="validationMsgInput3" style="color:red; float:right"></p>
+            <br />
+        </div>
+        <div class="form-group">
+            <label class="col-form-label" style="float:left" for="price">Price: </label>
+            <input class="form-control col-sm-4" type="number"  step="0.01" id="createInput5" style="float: right; width:200px" />
+            <br />
+            <br />
+            <p id="validationMsgInput5" style="color:red; float:right"></p>
+            <br />
+        </div>
+        <br />
+
+
+
+        <div class="row form-group" style="margin:auto; width:300px">
+            <button type="submit" class="btn btn-default" style="width:100px; background-color: lightblue">Add</button>
+            <br />
+            <br />
+            <input id="giveUpBtn" type="button" class="btn btn-default" style="width: 100px" value="Cancel" />
+        </div>
+    </form>
+
+</div>
+
