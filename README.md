@@ -1,6 +1,6 @@
 # Art-Gallery-WebApi
 
-
+This WebApi was Final Test for my .NET Web Development course at FTN Informatika Novi Sad.  
 Web application created by using the ASP.NET Web API, Entity Framework and Bootstrap, jQuery libraries and
 Partial View for recording art galleries and pictures that are selling in them. While you are logged out you can see a table with data but can't change anything. After logging in you can add new picture, search pictures for sale by price and also delete pictures from table. Also some unit Tests are included in project.
 
